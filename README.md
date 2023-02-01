@@ -61,7 +61,9 @@ Copy the `CNAME name` and `CNAME value`
 
 Create a CNAME entry in your domain manager, and copy the above values into `Hostname` and `Target name`
 
-Create a CNAME entry in your domain manager with the subdomain as the `Hostname` and the CloudFront domain as the `Target name`
+For each distribution, create a CNAME entry in your domain manager with the subdomain as the `Hostname` and the CloudFront domain as the `Target name`
+
+CloudFront does not work with root domains. For a root domain, a subdomain of `www` must be used, and the root domain must be forwarded to `www.your-domain.tld` from your domain manager.
 
 ### CloudFront Distribution Settings
 

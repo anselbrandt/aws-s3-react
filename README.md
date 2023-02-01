@@ -48,3 +48,22 @@ Invalidate CloudFront cache
 ```
 "aws cloudfront create-invalidation --distribution-id <your-distribution-id> --paths '/*'
 ```
+
+## Custom Domain
+
+### AWS Certificate Manager
+
+Request a certificate
+
+Enter your domain name as `*.your-domain.tld`
+
+Copy the `CNAME name` and `CNAME value`
+
+Create a CNAME entry in your domain manager, and copy the above values into `Hostname` and `Target name`
+
+Create a CNAME entry in your domain manager with the subdomain as the `Hostname` and the CloudFront domain as the `Target name`
+
+### CloudFront Distribution Settings
+
+Add Alternate domain name (CNAME)
+

@@ -41,6 +41,8 @@ Set `Default root object` to `index.html`
 
 Static site will be served at the CloudFront `Distribution domain name`
 
+Under `Error pages > Create custom error response`, add redirects for 400, 403, 404 to `/index.html` returning `200`
+
 ## Notes
 
 Invalidate CloudFront cache
@@ -61,11 +63,10 @@ Copy the `CNAME name` and `CNAME value`
 
 Create a CNAME entry in your domain manager, and copy the above values into `Hostname` and `Target name`
 
-For each distribution, create a CNAME entry in your domain manager with the subdomain as the `Hostname` and the CloudFront domain as the `Target name`
-
-CloudFront does not work with root domains. For a root domain, a subdomain of `www` must be used, and the root domain must be forwarded to `www.your-domain.tld` from your domain manager.
-
 ### CloudFront Distribution Settings
 
 Add Alternate domain name (CNAME)
 
+For each distribution, create a CNAME entry in your domain manager with the subdomain as the `Hostname` and the CloudFront domain as the `Target name`
+
+CloudFront does not work with root domains. For a root domain, a subdomain of `www` must be used, and the root domain must be forwarded to `www.your-domain.tld` from your domain manager.
